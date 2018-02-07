@@ -67,7 +67,7 @@ export class DialogComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onDialogChange() {
-
+    this.loadComponent();
   }
 
   onDialogClick(event) {
@@ -87,14 +87,18 @@ export class DialogComponent implements OnInit, AfterViewInit, OnDestroy {
     const viewContainerRef = this.dialogComponent.viewContainerRef;
     viewContainerRef.clear();
 
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.component);
-    const componentRef = viewContainerRef.createComponent(componentFactory);
+    if (this.component) {
+      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.component);
+      const componentRef = viewContainerRef.createComponent(componentFactory);
 
-    Object.keys(this.params).forEach(
-      k => {
-        componentRef.instance[k] = this.params[k];
+      if (this.params) {
+        Object.keys(this.params).forEach(
+          k => {
+            componentRef.instance[k] = this.params[k];
+          }
+        );
       }
-    );
+    }
   }
 
 }
