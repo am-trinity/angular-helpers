@@ -7,17 +7,17 @@ import { DialogService } from './dialog/dialog.service';
 
 @Component({
   selector: 'app-dummy',
-  template: '<p>Dummy</p>'
+  template: `<p>Dummy</p>`
 }) export class DummyComponent { }
 
 @Component({
   selector: 'app-example',
-  template: '
+  template: `
     <app-form [fields]="formFields"></app-form>
     
     <button (click)="handleButtonClick(event)">Show dialog</button>
     <app-dialog [dialogID]="'testDialog'" [component]="dialogComponent" [params]="dialogParams"></app-dialog>
-  '
+  `
 })
 export class ExampleComponent implements OnInit {
 
