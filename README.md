@@ -1,9 +1,8 @@
 # angular-helpers
 
-Reactive forms: https://angular.io/guide/reactive-forms
-Dynamic form: https://angular.io/guide/dynamic-form
-
-Dynamic component loading: https://angular.io/guide/dynamic-component-loader
+* Reactive forms: https://angular.io/guide/reactive-forms
+* Dynamic form: https://angular.io/guide/dynamic-form
+* Dynamic component loading: https://angular.io/guide/dynamic-component-loader
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
