@@ -20,13 +20,12 @@ import { DialogService } from './dialog/dialog.service';
     <app-form [fields]="formFields"></app-form>
     
     <button (click)="handleButtonClick(event)">Show dialog</button>
-    <app-dialog [dialogID]="'testDialog'" [component]="dialogComponent" [params]="dialogParams"></app-dialog>
+    <app-dialog [dialogID]="dialogID"></app-dialog>
   `
 })
 export class ExampleComponent implements OnInit {
 
-  dialogComponent = DummyComponent;
-  dialogParams = {};
+  dialogID = 'testDialog';
 
   formFields = [
     {
@@ -43,7 +42,9 @@ export class ExampleComponent implements OnInit {
   ngOnInit() { }
 
   handleButtonClick(event) {
-    this.dialog.show('testDialog');
+    this.dialog.set(this.dialogID, 'component', DummyComponent);
+    this.dialog.set(this.dialogID, 'params', {});
+    this.dialog.show(this.dialogID);
   }
 
 }
