@@ -1,0 +1,37 @@
+.dialog {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: z-index 1s, visibility 0.5s, opacity 0.3s;
+    position: fixed;
+    z-index: 0;
+    overflow: auto;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(0, 0, 0, 0.7);
+    .equalizer {
+        display: flex;
+        min-height: 100%;
+        min-width: 100%;
+        .container {
+            margin: auto;
+            padding: 30px 30px;
+            .content {
+                position: relative;
+                margin: auto;
+                height: 100%;
+                overflow: auto;
+                background: #ffffff;
+                box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+                border-radius: 2px;
+            }
+        }
+    }
+    &.visible {
+        z-index: 50;
+        visibility: visible;
+        opacity: 1;
+    }
+}

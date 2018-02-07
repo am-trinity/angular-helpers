@@ -1,0 +1,9 @@
+<div [ngClass]="{visible: isVisible}" (click)="handleDialogClick($event)" class="dialog">
+  <div _closeonclick class="equalizer">
+    <div _closeonclick class="container">
+      <div class="content">
+        <ng-template *ngIf="component" appDialogComponent></ng-template>
+      </div>
+    </div>
+  </div>
+</div>

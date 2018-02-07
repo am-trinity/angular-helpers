@@ -1,0 +1,14 @@
+<div [formGroup]="form">
+  <label [attr.for]="field.name">{{field.label}}</label>
+
+  <div [ngSwitch]="field.type">
+    <!-- String -->
+    <input *ngSwitchCase="'string'" [id]="field.name" [formControlName]="field.name">
+    <!-- List -->
+    <select *ngSwitchCase="'list'" [id]="field.name" [formControlName]="field.name">
+      <option *ngFor="let item of field.list" [value]="item.key">{{item.value}}</option>
+    </select>
+  </div>
+  
+  <div class="errorMessage" *ngIf="!isValid">{{field.label}} is required</div>
+</div>
